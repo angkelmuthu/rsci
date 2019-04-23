@@ -80,8 +80,8 @@ jQuery(document).ready(domo);
                            <th>
                             <input type="checkbox" class="flat-red toltip" id="check_all" name="check_all" title="check all">
                            </th>
-                           <th>Jasagroup</th>
-                           <th>Kdjasatipe</th>
+                           <th>Jasa Group</th>
+                           <th>Jasa Jenis</th>
                            <th>Action</th>
                         </tr>
                      </thead>
@@ -89,21 +89,21 @@ jQuery(document).ready(domo);
                      <?php foreach($m_jasagroups as $m_jasagroup): ?>
                         <tr>
                            <td width="5">
-                              <input type="checkbox" class="flat-red check" name="id[]" value="<?= $m_jasagroup->kdjasagoup; ?>">
+                              <input type="checkbox" class="flat-red check" name="id[]" value="<?= $m_jasagroup->kdjasagroup; ?>">
                            </td>
                            
                            <td><?= _ent($m_jasagroup->jasagroup); ?></td> 
-                           <td><?= _ent($m_jasagroup->jasatipe); ?></td>
+                           <td><?= _ent($m_jasagroup->jasajenis); ?></td>
                              
                            <td width="200">
                               <?php is_allowed('m_jasagroup_view', function() use ($m_jasagroup){?>
-                              <a href="<?= site_url('administrator/m_jasagroup/view/' . $m_jasagroup->kdjasagoup); ?>" class="label-default"><i class="fa fa-newspaper-o"></i> <?= cclang('view_button'); ?>
+                              <a href="<?= site_url('administrator/m_jasagroup/view/' . $m_jasagroup->kdjasagroup); ?>" class="label-default"><i class="fa fa-newspaper-o"></i> <?= cclang('view_button'); ?>
                               <?php }) ?>
                               <?php is_allowed('m_jasagroup_update', function() use ($m_jasagroup){?>
-                              <a href="<?= site_url('administrator/m_jasagroup/edit/' . $m_jasagroup->kdjasagoup); ?>" class="label-default"><i class="fa fa-edit "></i> <?= cclang('update_button'); ?></a>
+                              <a href="<?= site_url('administrator/m_jasagroup/edit/' . $m_jasagroup->kdjasagroup); ?>" class="label-default"><i class="fa fa-edit "></i> <?= cclang('update_button'); ?></a>
                               <?php }) ?>
                               <?php is_allowed('m_jasagroup_delete', function() use ($m_jasagroup){?>
-                              <a href="javascript:void(0);" data-href="<?= site_url('administrator/m_jasagroup/delete/' . $m_jasagroup->kdjasagoup); ?>" class="label-default remove-data"><i class="fa fa-close"></i> <?= cclang('remove_button'); ?></a>
+                              <a href="javascript:void(0);" data-href="<?= site_url('administrator/m_jasagroup/delete/' . $m_jasagroup->kdjasagroup); ?>" class="label-default remove-data"><i class="fa fa-close"></i> <?= cclang('remove_button'); ?></a>
                                <?php }) ?>
                            </td>
                         </tr>
@@ -139,7 +139,7 @@ jQuery(document).ready(domo);
                         <select type="text" class="form-control chosen chosen-select" name="f" id="field" >
                            <option value=""><?= cclang('all'); ?></option>
                             <option <?= $this->input->get('f') == 'jasagroup' ? 'selected' :''; ?> value="jasagroup">Jasagroup</option>
-                           <option <?= $this->input->get('f') == 'kdjasatipe' ? 'selected' :''; ?> value="kdjasatipe">Kdjasatipe</option>
+                           <option <?= $this->input->get('f') == 'kdjasajenis' ? 'selected' :''; ?> value="kdjasajenis">Kdjasajenis</option>
                           </select>
                      </div>
                      <div class="col-sm-1 padd-left-0 ">

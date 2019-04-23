@@ -60,29 +60,29 @@
                             ]); ?>
                          
                                                 <div class="form-group ">
-                            <label for="jasagroup" class="col-sm-2 control-label">Jasagroup 
+                            <label for="jasagroup" class="col-sm-2 control-label">Jasa Group 
                             <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" name="jasagroup" id="jasagroup" placeholder="Jasagroup" value="<?= set_value('jasagroup', $m_jasagroup->jasagroup); ?>">
+                                <input type="text" class="form-control" name="jasagroup" id="jasagroup" placeholder="Jasa Group" value="<?= set_value('jasagroup', $m_jasagroup->jasagroup); ?>">
                                 <small class="info help-block">
-                                <b>Input Jasagroup</b> Max Length : 50.</small>
+                                <b>Input Jasagroup</b> Max Length : 75.</small>
                             </div>
                         </div>
                                                  
                                                 <div class="form-group ">
-                            <label for="kdjasatipe" class="col-sm-2 control-label">Kdjasatipe 
+                            <label for="kdjasajenis" class="col-sm-2 control-label">Jasa Jenis 
                             <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
-                                <select  class="form-control chosen chosen-select-deselect" name="kdjasatipe" id="kdjasatipe" data-placeholder="Select Kdjasatipe" >
+                                <select  class="form-control chosen chosen-select-deselect" name="kdjasajenis" id="kdjasajenis" data-placeholder="Select Kdjasajenis" >
                                     <option value=""></option>
-                                    <?php foreach (db_get_all_data('m_jasatipe') as $row): ?>
-                                    <option <?=  $row->kdjasatipe ==  $m_jasagroup->kdjasatipe ? 'selected' : ''; ?> value="<?= $row->kdjasatipe ?>"><?= $row->jasatipe; ?></option>
+                                    <?php foreach (db_get_all_data('m_jasajenis') as $row): ?>
+                                    <option <?=  $row->kdjasajenis ==  $m_jasagroup->kdjasajenis ? 'selected' : ''; ?> value="<?= $row->kdjasajenis ?>"><?= $row->jasajenis; ?></option>
                                     <?php endforeach; ?>  
                                 </select>
                                 <small class="info help-block">
-                                <b>Input Kdjasatipe</b> Max Length : 11.</small>
+                                <b>Input Kdjasajenis</b> Max Length : 11.</small>
                             </div>
                         </div>
 

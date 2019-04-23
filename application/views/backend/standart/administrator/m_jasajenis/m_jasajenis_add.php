@@ -26,11 +26,11 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
-        M Jasatipe        <small><?= cclang('new', ['M Jasatipe']); ?> </small>
+        M Jasajenis        <small><?= cclang('new', ['M Jasajenis']); ?> </small>
     </h1>
     <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class=""><a  href="<?= site_url('administrator/m_jasatipe'); ?>">M Jasatipe</a></li>
+        <li class=""><a  href="<?= site_url('administrator/m_jasajenis'); ?>">M Jasajenis</a></li>
         <li class="active"><?= cclang('new'); ?></li>
     </ol>
 </section>
@@ -48,47 +48,26 @@
                                 <img class="img-circle" src="<?= BASE_ASSET; ?>/img/add2.png" alt="User Avatar">
                             </div>
                             <!-- /.widget-user-image -->
-                            <h3 class="widget-user-username">M Jasatipe</h3>
-                            <h5 class="widget-user-desc"><?= cclang('new', ['M Jasatipe']); ?></h5>
+                            <h3 class="widget-user-username">M Jasajenis</h3>
+                            <h5 class="widget-user-desc"><?= cclang('new', ['M Jasajenis']); ?></h5>
                             <hr>
                         </div>
                         <?= form_open('', [
-                            'name'    => 'form_m_jasatipe', 
+                            'name'    => 'form_m_jasajenis', 
                             'class'   => 'form-horizontal', 
-                            'id'      => 'form_m_jasatipe', 
+                            'id'      => 'form_m_jasajenis', 
                             'enctype' => 'multipart/form-data', 
                             'method'  => 'POST'
                             ]); ?>
                          
                                                 <div class="form-group ">
-                            <label for="jasatipe" class="col-sm-2 control-label">Jasatipe 
+                            <label for="jasajenis" class="col-sm-2 control-label">Jasa Jenis 
                             <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" name="jasatipe" id="jasatipe" placeholder="Jasatipe" value="<?= set_value('jasatipe'); ?>">
+                                <input type="text" class="form-control" name="jasajenis" id="jasajenis" placeholder="Jasa Jenis" value="<?= set_value('jasajenis'); ?>">
                                 <small class="info help-block">
-                                <b>Input Jasatipe</b> Max Length : 50.</small>
-                            </div>
-                        </div>
-                                                 
-                                                <div class="form-group  wrapper-options-crud">
-                            <label for="stok" class="col-sm-2 control-label">Stok 
-                            <i class="required">*</i>
-                            </label>
-                            <div class="col-sm-8">
-                                    <div class="col-md-3 padding-left-0">
-                                    <label>
-                                    <input type="radio" class="flat-red" name="stok" value="Y"> YES                                    </label>
-                                    </div>
-                                    <div class="col-md-3 padding-left-0">
-                                    <label>
-                                    <input type="radio" class="flat-red" name="stok" value="N"> NO                                    </label>
-                                    </div>
-                                    </select>
-                                <div class="row-fluid clear-both">
-                                <small class="info help-block">
-                                </small>
-                                </div>
+                                <b>Input Jasajenis</b> Max Length : 50.</small>
                             </div>
                         </div>
                                                 
@@ -136,7 +115,7 @@
           },
           function(isConfirm){
             if (isConfirm) {
-              window.location.href = BASE_URL + 'administrator/m_jasatipe';
+              window.location.href = BASE_URL + 'administrator/m_jasajenis';
             }
           });
     
@@ -146,8 +125,8 @@
       $('.btn_save').click(function(){
         $('.message').fadeOut();
             
-        var form_m_jasatipe = $('#form_m_jasatipe');
-        var data_post = form_m_jasatipe.serializeArray();
+        var form_m_jasajenis = $('#form_m_jasajenis');
+        var data_post = form_m_jasajenis.serializeArray();
         var save_type = $(this).attr('data-stype');
 
         data_post.push({name: 'save_type', value: save_type});
@@ -155,7 +134,7 @@
         $('.loading').show();
     
         $.ajax({
-          url: BASE_URL + '/administrator/m_jasatipe/add_save',
+          url: BASE_URL + '/administrator/m_jasajenis/add_save',
           type: 'POST',
           dataType: 'json',
           data: data_post,

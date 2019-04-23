@@ -1,11 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Model_m_jasatipe extends MY_Model {
+class Model_m_jasajenis extends MY_Model {
 
-	private $primary_key 	= 'kdjasatipe';
-	private $table_name 	= 'm_jasatipe';
-	private $field_search 	= ['jasatipe', 'stok'];
+	private $primary_key 	= 'kdjasajenis';
+	private $table_name 	= 'm_jasajenis';
+	private $field_search 	= ['jasajenis'];
 
 	public function __construct()
 	{
@@ -29,16 +29,16 @@ class Model_m_jasatipe extends MY_Model {
         if (empty($field)) {
 	        foreach ($this->field_search as $field) {
 	            if ($iterasi == 1) {
-	                $where .= "m_jasatipe.".$field . " LIKE '%" . $q . "%' ";
+	                $where .= "m_jasajenis.".$field . " LIKE '%" . $q . "%' ";
 	            } else {
-	                $where .= "OR " . "m_jasatipe.".$field . " LIKE '%" . $q . "%' ";
+	                $where .= "OR " . "m_jasajenis.".$field . " LIKE '%" . $q . "%' ";
 	            }
 	            $iterasi++;
 	        }
 
 	        $where = '('.$where.')';
         } else {
-        	$where .= "(" . "m_jasatipe.".$field . " LIKE '%" . $q . "%' )";
+        	$where .= "(" . "m_jasajenis.".$field . " LIKE '%" . $q . "%' )";
         }
 
 		$this->join_avaiable()->filter_avaiable();
@@ -59,16 +59,16 @@ class Model_m_jasatipe extends MY_Model {
         if (empty($field)) {
 	        foreach ($this->field_search as $field) {
 	            if ($iterasi == 1) {
-	                $where .= "m_jasatipe.".$field . " LIKE '%" . $q . "%' ";
+	                $where .= "m_jasajenis.".$field . " LIKE '%" . $q . "%' ";
 	            } else {
-	                $where .= "OR " . "m_jasatipe.".$field . " LIKE '%" . $q . "%' ";
+	                $where .= "OR " . "m_jasajenis.".$field . " LIKE '%" . $q . "%' ";
 	            }
 	            $iterasi++;
 	        }
 
 	        $where = '('.$where.')';
         } else {
-        	$where .= "(" . "m_jasatipe.".$field . " LIKE '%" . $q . "%' )";
+        	$where .= "(" . "m_jasajenis.".$field . " LIKE '%" . $q . "%' )";
         }
 
         if (is_array($select_field) AND count($select_field)) {
@@ -78,7 +78,7 @@ class Model_m_jasatipe extends MY_Model {
 		$this->join_avaiable()->filter_avaiable();
         $this->db->where($where);
         $this->db->limit($limit, $offset);
-        $this->db->order_by('m_jasatipe.'.$this->primary_key, "DESC");
+        $this->db->order_by('m_jasajenis.'.$this->primary_key, "DESC");
 		$query = $this->db->get($this->table_name);
 
 		return $query->result();
@@ -96,5 +96,5 @@ class Model_m_jasatipe extends MY_Model {
 
 }
 
-/* End of file Model_m_jasatipe.php */
-/* Location: ./application/models/Model_m_jasatipe.php */
+/* End of file Model_m_jasajenis.php */
+/* Location: ./application/models/Model_m_jasajenis.php */

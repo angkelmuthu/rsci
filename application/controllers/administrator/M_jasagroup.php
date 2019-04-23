@@ -74,15 +74,15 @@ class M_jasagroup extends Admin
 			exit;
 		}
 
-		$this->form_validation->set_rules('jasagroup', 'Jasagroup', 'trim|required|max_length[50]');
-		$this->form_validation->set_rules('kdjasatipe', 'Kdjasatipe', 'trim|required|max_length[11]');
+		$this->form_validation->set_rules('jasagroup', 'Jasa Group', 'trim|required|max_length[75]');
+		$this->form_validation->set_rules('kdjasajenis', 'Jasa Jenis', 'trim|required|max_length[11]');
 		
 
 		if ($this->form_validation->run()) {
 		
 			$save_data = [
 				'jasagroup' => $this->input->post('jasagroup'),
-				'kdjasatipe' => $this->input->post('kdjasatipe'),
+				'kdjasajenis' => $this->input->post('kdjasajenis'),
 			];
 
 			
@@ -154,14 +154,14 @@ class M_jasagroup extends Admin
 			exit;
 		}
 		
-		$this->form_validation->set_rules('jasagroup', 'Jasagroup', 'trim|required|max_length[50]');
-		$this->form_validation->set_rules('kdjasatipe', 'Kdjasatipe', 'trim|required|max_length[11]');
+		$this->form_validation->set_rules('jasagroup', 'Jasa Group', 'trim|required|max_length[75]');
+		$this->form_validation->set_rules('kdjasajenis', 'Jasa Jenis', 'trim|required|max_length[11]');
 		
 		if ($this->form_validation->run()) {
 		
 			$save_data = [
 				'jasagroup' => $this->input->post('jasagroup'),
-				'kdjasatipe' => $this->input->post('kdjasatipe'),
+				'kdjasajenis' => $this->input->post('kdjasajenis'),
 			];
 
 			

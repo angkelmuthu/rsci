@@ -57,15 +57,15 @@ jQuery(document).ready(domo);
                   <div class="form-horizontal" name="form_m_jasagroup" id="form_m_jasagroup" >
                    
                     <div class="form-group ">
-                        <label for="content" class="col-sm-2 control-label">Kdjasagoup </label>
+                        <label for="content" class="col-sm-2 control-label">Kdjasagroup </label>
 
                         <div class="col-sm-8">
-                           <?= _ent($m_jasagroup->kdjasagoup); ?>
+                           <?= _ent($m_jasagroup->kdjasagroup); ?>
                         </div>
                     </div>
                                          
                     <div class="form-group ">
-                        <label for="content" class="col-sm-2 control-label">Jasagroup </label>
+                        <label for="content" class="col-sm-2 control-label">Jasa Group </label>
 
                         <div class="col-sm-8">
                            <?= _ent($m_jasagroup->jasagroup); ?>
@@ -73,10 +73,10 @@ jQuery(document).ready(domo);
                     </div>
                                          
                     <div class="form-group ">
-                        <label for="content" class="col-sm-2 control-label">Kdjasatipe </label>
+                        <label for="content" class="col-sm-2 control-label">Jasa Jenis </label>
 
                         <div class="col-sm-8">
-                           <?= _ent($m_jasagroup->jasatipe); ?>
+                           <?= _ent($m_jasagroup->jasajenis); ?>
                         </div>
                     </div>
                                         
@@ -85,7 +85,7 @@ jQuery(document).ready(domo);
 
                     <div class="view-nav">
                         <?php is_allowed('m_jasagroup_update', function() use ($m_jasagroup){?>
-                        <a class="btn btn-flat btn-info btn_edit btn_action" id="btn_edit" data-stype='back' title="edit m_jasagroup (Ctrl+e)" href="<?= site_url('administrator/m_jasagroup/edit/'.$m_jasagroup->kdjasagoup); ?>"><i class="fa fa-edit" ></i> <?= cclang('update', ['M Jasagroup']); ?> </a>
+                        <a class="btn btn-flat btn-info btn_edit btn_action" id="btn_edit" data-stype='back' title="edit m_jasagroup (Ctrl+e)" href="<?= site_url('administrator/m_jasagroup/edit/'.$m_jasagroup->kdjasagroup); ?>"><i class="fa fa-edit" ></i> <?= cclang('update', ['M Jasagroup']); ?> </a>
                         <?php }) ?>
                         <a class="btn btn-flat btn-default btn_action" id="btn_back" title="back (Ctrl+x)" href="<?= site_url('administrator/m_jasagroup/'); ?>"><i class="fa fa-undo" ></i> <?= cclang('go_list_button', ['M Jasagroup']); ?></a>
                      </div>

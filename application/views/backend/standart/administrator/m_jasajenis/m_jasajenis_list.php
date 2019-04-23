@@ -7,7 +7,7 @@ function domo(){
  
    // Binding keys
    $('*').bind('keydown', 'Ctrl+a', function assets() {
-       window.location.href = BASE_URL + '/administrator/M_jasatipe/add';
+       window.location.href = BASE_URL + '/administrator/M_jasajenis/add';
        return false;
    });
 
@@ -33,11 +33,11 @@ jQuery(document).ready(domo);
 <!-- Content Header (Page header) -->
 <section class="content-header">
    <h1>
-      M Jasatipe<small><?= cclang('list_all'); ?></small>
+      M Jasajenis<small><?= cclang('list_all'); ?></small>
    </h1>
    <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li class="active">M Jasatipe</li>
+      <li class="active">M Jasajenis</li>
    </ol>
 </section>
 <!-- Main content -->
@@ -52,25 +52,25 @@ jQuery(document).ready(domo);
                   <!-- Add the bg color to the header using any of the bg-* classes -->
                   <div class="widget-user-header ">
                      <div class="row pull-right">
-                        <?php is_allowed('m_jasatipe_add', function(){?>
-                        <a class="btn btn-flat btn-success btn_add_new" id="btn_add_new" title="<?= cclang('add_new_button', ['M Jasatipe']); ?>  (Ctrl+a)" href="<?=  site_url('administrator/m_jasatipe/add'); ?>"><i class="fa fa-plus-square-o" ></i> <?= cclang('add_new_button', ['M Jasatipe']); ?></a>
+                        <?php is_allowed('m_jasajenis_add', function(){?>
+                        <a class="btn btn-flat btn-success btn_add_new" id="btn_add_new" title="<?= cclang('add_new_button', ['M Jasajenis']); ?>  (Ctrl+a)" href="<?=  site_url('administrator/m_jasajenis/add'); ?>"><i class="fa fa-plus-square-o" ></i> <?= cclang('add_new_button', ['M Jasajenis']); ?></a>
                         <?php }) ?>
-                        <?php is_allowed('m_jasatipe_export', function(){?>
-                        <a class="btn btn-flat btn-success" title="<?= cclang('export'); ?> M Jasatipe" href="<?= site_url('administrator/m_jasatipe/export'); ?>"><i class="fa fa-file-excel-o" ></i> <?= cclang('export'); ?> XLS</a>
+                        <?php is_allowed('m_jasajenis_export', function(){?>
+                        <a class="btn btn-flat btn-success" title="<?= cclang('export'); ?> M Jasajenis" href="<?= site_url('administrator/m_jasajenis/export'); ?>"><i class="fa fa-file-excel-o" ></i> <?= cclang('export'); ?> XLS</a>
                         <?php }) ?>
-                        <?php is_allowed('m_jasatipe_export', function(){?>
-                        <a class="btn btn-flat btn-success" title="<?= cclang('export'); ?> pdf M Jasatipe" href="<?= site_url('administrator/m_jasatipe/export_pdf'); ?>"><i class="fa fa-file-pdf-o" ></i> <?= cclang('export'); ?> PDF</a>
+                        <?php is_allowed('m_jasajenis_export', function(){?>
+                        <a class="btn btn-flat btn-success" title="<?= cclang('export'); ?> pdf M Jasajenis" href="<?= site_url('administrator/m_jasajenis/export_pdf'); ?>"><i class="fa fa-file-pdf-o" ></i> <?= cclang('export'); ?> PDF</a>
                         <?php }) ?>
                      </div>
                      <div class="widget-user-image">
                         <img class="img-circle" src="<?= BASE_ASSET; ?>/img/list.png" alt="User Avatar">
                      </div>
                      <!-- /.widget-user-image -->
-                     <h3 class="widget-user-username">M Jasatipe</h3>
-                     <h5 class="widget-user-desc"><?= cclang('list_all', ['M Jasatipe']); ?>  <i class="label bg-yellow"><?= $m_jasatipe_counts; ?>  <?= cclang('items'); ?></i></h5>
+                     <h3 class="widget-user-username">M Jasajenis</h3>
+                     <h5 class="widget-user-desc"><?= cclang('list_all', ['M Jasajenis']); ?>  <i class="label bg-yellow"><?= $m_jasajenis_counts; ?>  <?= cclang('items'); ?></i></h5>
                   </div>
 
-                  <form name="form_m_jasatipe" id="form_m_jasatipe" action="<?= base_url('administrator/m_jasatipe/index'); ?>">
+                  <form name="form_m_jasajenis" id="form_m_jasajenis" action="<?= base_url('administrator/m_jasajenis/index'); ?>">
                   
 
                   <div class="table-responsive"> 
@@ -80,37 +80,35 @@ jQuery(document).ready(domo);
                            <th>
                             <input type="checkbox" class="flat-red toltip" id="check_all" name="check_all" title="check all">
                            </th>
-                           <th>Jasatipe</th>
-                           <th>Stok</th>
+                           <th>Jasa Jenis</th>
                            <th>Action</th>
                         </tr>
                      </thead>
-                     <tbody id="tbody_m_jasatipe">
-                     <?php foreach($m_jasatipes as $m_jasatipe): ?>
+                     <tbody id="tbody_m_jasajenis">
+                     <?php foreach($m_jasajeniss as $m_jasajenis): ?>
                         <tr>
                            <td width="5">
-                              <input type="checkbox" class="flat-red check" name="id[]" value="<?= $m_jasatipe->kdjasatipe; ?>">
+                              <input type="checkbox" class="flat-red check" name="id[]" value="<?= $m_jasajenis->kdjasajenis; ?>">
                            </td>
                            
-                           <td><?= _ent($m_jasatipe->jasatipe); ?></td> 
-                           <td><?= _ent($m_jasatipe->stok); ?></td> 
+                           <td><?= _ent($m_jasajenis->jasajenis); ?></td> 
                            <td width="200">
-                              <?php is_allowed('m_jasatipe_view', function() use ($m_jasatipe){?>
-                              <a href="<?= site_url('administrator/m_jasatipe/view/' . $m_jasatipe->kdjasatipe); ?>" class="label-default"><i class="fa fa-newspaper-o"></i> <?= cclang('view_button'); ?>
+                              <?php is_allowed('m_jasajenis_view', function() use ($m_jasajenis){?>
+                              <a href="<?= site_url('administrator/m_jasajenis/view/' . $m_jasajenis->kdjasajenis); ?>" class="label-default"><i class="fa fa-newspaper-o"></i> <?= cclang('view_button'); ?>
                               <?php }) ?>
-                              <?php is_allowed('m_jasatipe_update', function() use ($m_jasatipe){?>
-                              <a href="<?= site_url('administrator/m_jasatipe/edit/' . $m_jasatipe->kdjasatipe); ?>" class="label-default"><i class="fa fa-edit "></i> <?= cclang('update_button'); ?></a>
+                              <?php is_allowed('m_jasajenis_update', function() use ($m_jasajenis){?>
+                              <a href="<?= site_url('administrator/m_jasajenis/edit/' . $m_jasajenis->kdjasajenis); ?>" class="label-default"><i class="fa fa-edit "></i> <?= cclang('update_button'); ?></a>
                               <?php }) ?>
-                              <?php is_allowed('m_jasatipe_delete', function() use ($m_jasatipe){?>
-                              <a href="javascript:void(0);" data-href="<?= site_url('administrator/m_jasatipe/delete/' . $m_jasatipe->kdjasatipe); ?>" class="label-default remove-data"><i class="fa fa-close"></i> <?= cclang('remove_button'); ?></a>
+                              <?php is_allowed('m_jasajenis_delete', function() use ($m_jasajenis){?>
+                              <a href="javascript:void(0);" data-href="<?= site_url('administrator/m_jasajenis/delete/' . $m_jasajenis->kdjasajenis); ?>" class="label-default remove-data"><i class="fa fa-close"></i> <?= cclang('remove_button'); ?></a>
                                <?php }) ?>
                            </td>
                         </tr>
                       <?php endforeach; ?>
-                      <?php if ($m_jasatipe_counts == 0) :?>
+                      <?php if ($m_jasajenis_counts == 0) :?>
                          <tr>
                            <td colspan="100">
-                           M Jasatipe data is not available
+                           M Jasajenis data is not available
                            </td>
                          </tr>
                       <?php endif; ?>
@@ -137,8 +135,7 @@ jQuery(document).ready(domo);
                      <div class="col-sm-3 padd-left-0 " >
                         <select type="text" class="form-control chosen chosen-select" name="f" id="field" >
                            <option value=""><?= cclang('all'); ?></option>
-                            <option <?= $this->input->get('f') == 'jasatipe' ? 'selected' :''; ?> value="jasatipe">Jasatipe</option>
-                           <option <?= $this->input->get('f') == 'stok' ? 'selected' :''; ?> value="stok">Stok</option>
+                            <option <?= $this->input->get('f') == 'jasajenis' ? 'selected' :''; ?> value="jasajenis">Jasajenis</option>
                           </select>
                      </div>
                      <div class="col-sm-1 padd-left-0 ">
@@ -147,7 +144,7 @@ jQuery(document).ready(domo);
                         </button>
                      </div>
                      <div class="col-sm-1 padd-left-0 ">
-                        <a class="btn btn-default btn-flat" name="reset" id="reset" value="Apply" href="<?= base_url('administrator/m_jasatipe');?>" title="<?= cclang('reset_filter'); ?>">
+                        <a class="btn btn-default btn-flat" name="reset" id="reset" value="Apply" href="<?= base_url('administrator/m_jasajenis');?>" title="<?= cclang('reset_filter'); ?>">
                         <i class="fa fa-undo"></i>
                         </a>
                      </div>
@@ -199,7 +196,7 @@ jQuery(document).ready(domo);
     $('#apply').click(function(){
 
       var bulk = $('#bulk');
-      var serialize_bulk = $('#form_m_jasatipe').serialize();
+      var serialize_bulk = $('#form_m_jasajenis').serialize();
 
       if (bulk.val() == 'delete') {
          swal({
@@ -215,7 +212,7 @@ jQuery(document).ready(domo);
           },
           function(isConfirm){
             if (isConfirm) {
-               document.location.href = BASE_URL + '/administrator/m_jasatipe/delete?' + serialize_bulk;      
+               document.location.href = BASE_URL + '/administrator/m_jasajenis/delete?' + serialize_bulk;      
             }
           });
 

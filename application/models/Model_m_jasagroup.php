@@ -3,9 +3,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Model_m_jasagroup extends MY_Model {
 
-	private $primary_key 	= 'kdjasagoup';
+	private $primary_key 	= 'kdjasagroup';
 	private $table_name 	= 'm_jasagroup';
-	private $field_search 	= ['jasagroup', 'kdjasatipe'];
+	private $field_search 	= ['jasagroup', 'kdjasajenis'];
 
 	public function __construct()
 	{
@@ -85,7 +85,7 @@ class Model_m_jasagroup extends MY_Model {
 	}
 
     public function join_avaiable() {
-        $this->db->join('m_jasatipe', 'm_jasatipe.kdjasatipe = m_jasagroup.kdjasatipe', 'LEFT');
+        $this->db->join('m_jasajenis', 'm_jasajenis.kdjasajenis = m_jasagroup.kdjasajenis', 'LEFT');
         
         return $this;
     }
